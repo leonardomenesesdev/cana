@@ -17,9 +17,7 @@ public class ArvoreAv1 {
 
     private No raiz;
 
-    // --- MÉTODOS DA ÁRVORE AVL ---
 
-    // Função para obter a altura de um nó (trata o caso de nó nulo)
     private int altura(No no) {
         if (no == null) {
             return 0;
@@ -139,12 +137,8 @@ public class ArvoreAv1 {
         // Retorna 1 (nó atual) + tamanho da subárvore esquerda + tamanho da subárvore direita.
         return 1 + tamanhoRec(no.esq) + tamanhoRec(no.dir);
     }
-    // --- ESTRUTURA DE FILA MANUAL PARA O MÉTODO getNoPorIndice ---
 
-    /**
-     * Representa um elemento (nó) dentro da nossa FilaManual.
-     * Ele "embrulha" o nó da árvore para poder ser encadeado.
-     */
+
     private static class NoDaFila {
         No noDaArvore;
         NoDaFila proximo;
@@ -155,24 +149,16 @@ public class ArvoreAv1 {
         }
     }
 
-    /**
-     * Uma implementação simples de Fila (Queue) usando uma lista encadeada manual.
-     * Oferece os métodos essenciais: add (enfileirar), poll (desenfileirar) e isEmpty.
-     */
+
     private static class FilaManual {
         private NoDaFila inicio; // O início da fila (de onde removemos)
         private NoDaFila fim;    // O fim da fila (onde adicionamos)
 
-        /**
-         * Verifica se a fila está vazia.
-         */
         public boolean isEmpty() {
             return inicio == null;
         }
 
-        /**
-         * Adiciona um nó da árvore ao final da fila.
-         */
+
         public void add(No noDaArvore) {
             NoDaFila novoNo = new NoDaFila(noDaArvore);
             if (isEmpty()) {
@@ -184,9 +170,6 @@ public class ArvoreAv1 {
             }
         }
 
-        /**
-         * Remove e retorna o nó da árvore do início da fila.
-         */
         public No poll() {
             if (isEmpty()) {
                 return null;
@@ -200,16 +183,7 @@ public class ArvoreAv1 {
             return noParaRetornar;
         }
     }
-    // --- NOVO MÉTODO PARA OBTER NÓ POR ÍNDICE ---
 
-    /**
-     * Retorna o nó da árvore localizado em um índice específico,
-     * baseado em um percurso por nível (largura/BFS).
-     * Utiliza uma Fila implementada manualmente.
-     *
-     * @param idx O índice do nó a ser buscado (0 é a raiz).
-     * @return O objeto No encontrado, ou null se o índice for inválido.
-     */
     public No getNoByIndex(int idx) {
         if (raiz == null || idx < 0) {
             return null;
@@ -223,11 +197,11 @@ public class ArvoreAv1 {
             No noAtual = fila.poll();
 
             if (k == idx) {
-                return noAtual; // Encontramos o nó no índice desejado
+                return noAtual;
             }
             k++;
 
-            // Adiciona os filhos na fila para continuar o percurso
+
             if (noAtual.esq != null) {
                 fila.add(noAtual.esq);
             }
@@ -240,6 +214,7 @@ public class ArvoreAv1 {
     }
     public void insertionSort(){
         int n = tamanho();
+        imprimirPorNivel();
         for (int i = 1; i<n; i++){
             No noAtual = getNoByIndex(i);
             int key = noAtual.valor;
@@ -255,13 +230,44 @@ public class ArvoreAv1 {
             }
             No pos = getNoByIndex(j+1);
             pos.valor = key;
+            imprimirPorNivel();
         }
     }
+    public void selectionSort(){
+        int tamanho = tamanho();
+
+        for (int i = 0; i < tamanho; i++) {
+            int min = i;
+            int minValue = getNoByIndex(min).valor;
+
+            for (int j = i+1; j < tamanho; j++){
+                int jValue = getNoByIndex(j).valor;
+                if (jValue < minValue) {
+                    min = j;
+                    minValue = jValue;
+                }
+            }
+
+            // faz a troca
+            int temp = getNoByIndex(i).valor;
+            getNoByIndex(i).valor = getNoByIndex(min).valor;
+            getNoByIndex(min).valor = temp;
+        }
+    }
+
 
     public void preOrdem(No no) { if (no != null) {
         System.out.print(no.valor + " ");
         preOrdem(no.esq);
         preOrdem(no.dir);
+        }
+    }
+    public void preOrdemInsertion(No no){
+        if(no!=null){
+            int tamanho = tamanho();
+            for (int i = 1; i<tamanho; i++){
+
+            }
         }
     }
     public void emOrdem(No no) { if (no != null) { emOrdem(no.esq); System.out.print(no.valor + " "); emOrdem(no.dir); } }
@@ -337,6 +343,7 @@ public class ArvoreAv1 {
 
         arvore.insertionSort();
         arvore.imprimirVisualmente();
+        System.out.println("Árvore ordenada");
         arvore.imprimirPorNivel();
         sc.close();
     }
