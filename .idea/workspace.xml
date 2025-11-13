@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfe5ca53-09f0-4bc9-bb82-f7f66539e609" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AV2/HeapSort/HsDesafioDois.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AV2/HeapSort/HsDesafioUm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AV1/ArvoreAv1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AV1/ArvoreAv1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AV3/FileMergerBruteForce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AV3/FileMergerBruteForce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AV3/FileMergerSequential.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AV3/FileMergerSequential.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AV3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AV3/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +37,10 @@
   "keyToString": {
     "Application.Arvore.executor": "Run",
     "Application.ArvoreAv1.executor": "Run",
+    "Application.HsDesafioDois.executor": "Run",
     "Application.HsDesafioUm.executor": "Run",
     "Application.InsertionSort.executor": "Run",
+    "Application.Main.executor": "Run",
     "Application.SelectionSort.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -79,7 +80,10 @@
       <workItem from="1755608712889" duration="1855000" />
       <workItem from="1755779667343" duration="3716000" />
       <workItem from="1756241152467" duration="22000" />
-      <workItem from="1759527028159" duration="1496000" />
+      <workItem from="1759527028159" duration="1800000" />
+      <workItem from="1759792770331" duration="620000" />
+      <workItem from="1761245650002" duration="127000" />
+      <workItem from="1762989414244" duration="1002000" />
     </task>
     <servers />
   </component>
